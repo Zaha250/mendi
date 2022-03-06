@@ -27,4 +27,38 @@ function modal(modalSelector, modalTriggerSelector) {
 
 document.addEventListener('DOMContentLoaded', function () {
   modal('.modal', '[data-modal="callback"]');
+  var form = document.getElementById('sendEmail');
+  form.addEventListener('submit', function _callee(e) {
+    var phone, response;
+    return regeneratorRuntime.async(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            e.preventDefault();
+            phone = form.querySelector('#phone').value;
+            _context.next = 4;
+            return regeneratorRuntime.awrap(fetch('Mailer/sendEmail.php', {
+              method: 'POST',
+              body: JSON.stringify({
+                phone: phone
+              })
+            }));
+
+          case 4:
+            response = _context.sent;
+            console.log(response);
+
+            if (response.ok) {
+              document.querySelector('.modal-right').innerHTML = '';
+              document.querySelector('.modal-left').remove();
+              document.querySelector('.modal-right').innerHTML = '<h2 class="modal__title title response__message">Данные отправлены</h2>';
+            }
+
+          case 7:
+          case "end":
+            return _context.stop();
+        }
+      }
+    });
+  });
 });

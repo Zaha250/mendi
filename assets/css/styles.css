@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("./reset.css");
 @import url("./fonts.css");
 body {
@@ -663,7 +664,6 @@ main {
           box-shadow: 0px 2px 0px #035136, inset 0px -8px 13px #0E9E6C, inset 0px 6px 10px #35E8A9;
   border-radius: 5px;
   border: none;
-  margin-bottom: 80px;
   width: 315px;
   white-space: nowrap;
   cursor: pointer;
@@ -679,6 +679,110 @@ main {
   height: 33px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.modal__link-label {
+  display: block;
+  margin: 14px 0px 80px;
+}
+
+.modal__link-label span {
+  text-decoration: underline;
+}
+
+.form-check-input__custom {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.form-check-input__custom + label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.form-check-input__custom + label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  border: 2px solid #D2DDEC;
+  border-radius: 6px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+}
+
+/* стили при checked */
+.form-check-input__custom:checked + label::before {
+  border-color: #2C7BE5;
+  background-color: #2C7BE5;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+/* стили при наведении курсора на checkbox */
+.form-check-input__custom:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #b3d7ff;
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.form-check-input__custom:disabled + label::before {
+  background-color: #FCFCFC;
+}
+
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.form-check-input__custom:not(:disabled):active + label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+.custom-check-label {
+  position: relative;
+  padding-left: 26px;
+}
+
+.custom-check-label::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #13835B;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.custom-check-input {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-check-input:not(:disabled):not(:checked) + .custom-check-label:hover::before {
+  border-color: #fff;
+}
+
+.custom-check-input:checked + .custom-check-label::before {
+  background: #13835B url("../images/icons/check.svg") no-repeat center/12px 10px;
 }
 
 @-webkit-keyframes pulse {
