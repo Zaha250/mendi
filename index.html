@@ -17,7 +17,7 @@
                 </div>
                 <div class="nav-callback">
                     <a href="tel:+79841949098" class="nav-callback__phone">+7 (984) 194 90 98</a>
-                    <button class="nav-callback__btn">Заказать звонок</button>
+                    <button class="nav-callback__btn" data-modal="callback">Заказать звонок</button>
                 </div>
             </nav>
         </div>
@@ -31,7 +31,7 @@
                             <span>«Хлорелла и горичник японский»</span>
                         </h1>
                         <p>(Chlorella & Chomeiso)</p>
-                        <button class="promo__btn promo-btn">
+                        <button class="promo__btn promo-btn" data-modal="callback">
                             Скоро в&nbsp;продаже
                         </button>
                     </div>
@@ -151,6 +151,57 @@
                 </div>
             </div>
         </section>
+        <section class="location">
+            <div class="location-infowindow">
+                <h3>Контакты</h3>
+                <div class="location-infowindow__item location-infowindow__address">
+                  <p>101000, Москва, Муниципальный Округ Басманный</p>
+                  <span>Армянский Пер. дом 9, строение 1, офис 106/20а</span>
+                </div>
+                <div class="location-infowindow__item location-infowindow__phone">
+                  <a href="tel:+79841949098">+7 (984) 194 90 98</a>
+                  <span>Консультации и расчёт</span>
+                </div>
+                <div class="location-infowindow__item location-infowindow__email">
+                  <a href="mailto:mail@mendi.ru">mail@mendi.ru</a>
+                  <span>Эл. почта</span>
+                </div>
+              </div>
+            <div id="map"></div>
+        </section>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="nav__logo">
+                    <img src="./assets/images/logo.svg" alt="Mendi">
+                </a>
+                <div class="nav-desc">
+                    <p>CHLORELLA & CHOMEISO | Хлорелла и горичник японский OKINAWA ・JAPAN</p>
+                </div>
+                <div class="nav-callback">
+                    <a href="tel:+79841949098" class="nav-callback__phone">+7 (984) 194 90 98</a>
+                    <button class="nav-callback__btn" data-modal="callback">Заказать звонок</button>
+                </div>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal__title title">Добро пожаловать</div>
+            <span class="modal__close">&times;</span>
+            <form name="form">
+                <input class="modal__input" type="number" name="phone" placeholder="Введите номер">
+                <button class="modal__btn button_sm" type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUzRGYIzsKp0eLjurTT1-HAHhX7uZOw4&callback=initMap"></script>
+    <script src="./assets/js/map.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>
