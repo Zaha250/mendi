@@ -191,17 +191,40 @@
 
     <div class="modal">
         <div class="modal-dialog">
-            <div class="modal__title title">Добро пожаловать</div>
             <span class="modal__close">&times;</span>
-            <form name="form">
-                <input class="modal__input" type="number" name="phone" placeholder="Введите номер">
-                <button class="modal__btn button_sm" type="submit">Войти</button>
-            </form>
+
+            <div class="modal-content">
+                <div class="modal-left">
+                    <img src="./assets/images/iphone.png" alt="Заказать звонок">
+                </div>
+                <div class="modal-right">
+                    <h2 class="modal__title title">Заказать звонок</h2>
+                    <p class="modal__text">Введите ваш номер телефона и&nbsp;наш менеджер свяжется с вами в&nbsp;течении <span>5 минут</span>
+                    </p>
+                    <form name="form">
+                        <label>
+                            Номер телефона
+                            <div class="modal__input-wrapper">
+                                <input 
+                                    class="modal__input" 
+                                    type="number" 
+                                    name="phone" 
+                                    maxlength="12" 
+                                    minlength="10" 
+                                    placeholder="+7 ( ___ ) ___ - __ - __"
+                                    autocomplete="off"
+                                >
+                            </div>
+                        </label>
+                        <button class="modal__btn button_sm" type="submit">перезвоните мне</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUzRGYIzsKp0eLjurTT1-HAHhX7uZOw4&callback=initMap"></script>
     <script src="./assets/js/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUzRGYIzsKp0eLjurTT1-HAHhX7uZOw4&callback=initMap"></script>
     <script src="./assets/js/index.js"></script>
 </body>
 </html>

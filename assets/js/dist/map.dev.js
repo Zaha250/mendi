@@ -136,7 +136,7 @@ function initMap() {
     map: map,
     position: coordinates,
     animation: google.maps.Animation.DROP,
-    icon: '/assets/images/icons/marker.svg'
+    icon: './assets/images/icons/marker.svg'
   });
   google.maps.event.addListener(marker, 'click', function () {// infowindow.open(map,marker);
   });
