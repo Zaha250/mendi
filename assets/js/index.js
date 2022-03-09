@@ -33,10 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const phone = form.querySelector('#phone').value;
 
-        const response = await fetch('Mailer/sendEmail.php', {
-            method: 'POST',
-            body: JSON.stringify({phone})
-        });
+        const response = await fetch(`send.php?phone=${phone}`);
         console.log(response);
 
         if(response.ok) {

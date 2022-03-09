@@ -37,12 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             phone = form.querySelector('#phone').value;
             _context.next = 4;
-            return regeneratorRuntime.awrap(fetch('Mailer/sendEmail.php', {
-              method: 'POST',
-              body: JSON.stringify({
-                phone: phone
-              })
-            }));
+            return regeneratorRuntime.awrap(fetch("send.php?phone=".concat(phone)));
 
           case 4:
             response = _context.sent;
